@@ -2,6 +2,7 @@ package com.todocalendar.dto;
 
 import com.todocalendar.models.Todoitem;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class TodoDto {
@@ -10,6 +11,9 @@ public class TodoDto {
     private String title;
     private String description;
     private boolean done;
+    private Date conclusionDate;
+    private Date finishDate;
+    private Long durationTime;
 
     public TodoDto() {
     }
@@ -19,6 +23,9 @@ public class TodoDto {
         this.title = entity.getTitle();
         this.description = entity.getDescription();
         this.done = entity.isDone();
+        this.conclusionDate = entity.getConclusionDate();
+        this.finishDate = entity.getFinishDate();
+        this.durationTime = entity.getDurationTime();
     }
 
     public Long getId() {
@@ -51,6 +58,30 @@ public class TodoDto {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public Date getConclusionDate() {
+        return conclusionDate;
+    }
+
+    public void setConclusionDate(Date conclusionDate) {
+        this.conclusionDate = conclusionDate;
+    }
+
+    public Date getFinishDate() {
+        return finishDate;
+    }
+
+    public void setFinishDate(Date finishDate) {
+        this.finishDate = finishDate;
+    }
+
+    public Long getDurationTime() {
+        return durationTime;
+    }
+
+    public void setDurationTime(Long durationTime) {
+        this.durationTime = durationTime;
     }
 
     @Override

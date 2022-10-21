@@ -3,6 +3,7 @@ package com.todocalendar.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Todoitem {
@@ -13,15 +14,21 @@ public class Todoitem {
     private String title;
     private String description;
     private boolean done;
+    private Date conclusionDate;
+    private Date finishDate;
+    private Long durationTime;
 
     public Todoitem() {
     }
 
-    public Todoitem(Long id, String title, String description, boolean done) {
+    public Todoitem(Long id, String title, String description, boolean done, Date conclusionDate, Date finishDate, Long durationTime) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.done = done;
+        this.conclusionDate = conclusionDate;
+        this.finishDate = finishDate;
+        this.durationTime = durationTime;
     }
 
     public Long getId() {
@@ -54,5 +61,29 @@ public class Todoitem {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public Date getConclusionDate() {
+        return conclusionDate;
+    }
+
+    public void setConclusionDate(Date conclusionDate) {
+        this.conclusionDate = conclusionDate;
+    }
+
+    public Date getFinishDate() {
+        return finishDate;
+    }
+
+    public void setFinishDate(Date finishDate) {
+        this.finishDate = finishDate;
+    }
+
+    public Long getDurationTime() {
+        return durationTime;
+    }
+
+    public void setDurationTime(Date d1, Date d2) {
+        this.durationTime = d1.getTime() - d2.getTime();
     }
 }
