@@ -4,19 +4,19 @@ public class TodoForm {
 
     private String title;
     private String description;
-    private boolean done;
-    private String conclusionDate;
-    private String finishDate;
+    private boolean done =  false;
+    private String taskDateTime;
+    private Long durationTime;
 
     public TodoForm() {
     }
 
-    public TodoForm(String title, String description, boolean done, String  conclusionDate, String finishDate) {
+    public TodoForm(String title, String description, boolean done, String  taskDateTime, String taskHour, Long durationTime) {
         this.title = title;
         this.description = description;
         this.done = done;
-        this.conclusionDate = conclusionDate;
-        this.finishDate = finishDate;
+        this.taskDateTime = taskDateTime;
+        this.durationTime = durationTime;
     }
 
     public String getTitle() {
@@ -43,19 +43,19 @@ public class TodoForm {
         this.done = done;
     }
 
-    public String getConclusionDate() {
-        return conclusionDate;
+    public String getTaskDateTime() {
+        return taskDateTime;
     }
 
-    public void setConclusionDate(String conclusionDate) {
-        this.conclusionDate = conclusionDate;
+    public void setTaskDateTime(String taskDateTime) {
+        this.taskDateTime = taskDateTime;
     }
 
-    public String getFinishDate() {
-        return finishDate;
+    public Long getDurationTime() {
+        return durationTime;
     }
 
-    public void setFinishDate(String finishDate) {
-        this.finishDate = finishDate;
+    public void setDurationTime(Long durationTime) {
+        this.durationTime = durationTime;
     }
 }

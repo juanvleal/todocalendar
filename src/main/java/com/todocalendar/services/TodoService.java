@@ -26,8 +26,8 @@ public class TodoService {
         entity.setTitle(form.getTitle());
         entity.setDescription(form.getDescription());
         entity.setDone(form.isDone());
-        entity.setConclusionDate(Utils.parse(form.getConclusionDate()));
-        entity.setFinishDate(Utils.parse(form.getFinishDate()));
+        entity.setTaskDateTime(form.getTaskDateTime());
+        entity.setDurationTime(form.getDurationTime());
         entity = todoRepository.save(entity);
         return new TodoDto(entity);
     }
@@ -48,9 +48,8 @@ public class TodoService {
         entity.setTitle(form.getTitle());
         entity.setDescription(form.getDescription());
         entity.setDone(form.isDone());
-        entity.setConclusionDate(Utils.parse(form.getConclusionDate()));
-        entity.setFinishDate(Utils.parse(form.getFinishDate()));
-        entity.setDurationTime(entity.getFinishDate(), entity.getConclusionDate());
+        entity.setTaskDateTime(form.getTaskDateTime());
+        entity.setDurationTime(form.getDurationTime());
         entity = todoRepository.save(entity);
         return new TodoDto(entity);
     }

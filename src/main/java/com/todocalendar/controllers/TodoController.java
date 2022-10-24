@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/todo")
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 public class TodoController {
 
     @Autowired

@@ -7,7 +7,7 @@ import java.util.Date;
 public class Utils {
 
     public static Date parse(String strDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
         Date date;
         try {
             date = sdf.parse(strDate);

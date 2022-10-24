@@ -11,8 +11,7 @@ public class TodoDto {
     private String title;
     private String description;
     private boolean done;
-    private Date conclusionDate;
-    private Date finishDate;
+    private String taskDateTime;
     private Long durationTime;
 
     public TodoDto() {
@@ -23,8 +22,7 @@ public class TodoDto {
         this.title = entity.getTitle();
         this.description = entity.getDescription();
         this.done = entity.isDone();
-        this.conclusionDate = entity.getConclusionDate();
-        this.finishDate = entity.getFinishDate();
+        this.taskDateTime = entity.getTaskDateTime();
         this.durationTime = entity.getDurationTime();
     }
 
@@ -60,20 +58,12 @@ public class TodoDto {
         this.done = done;
     }
 
-    public Date getConclusionDate() {
-        return conclusionDate;
+    public String getTaskDateTime() {
+        return taskDateTime;
     }
 
-    public void setConclusionDate(Date conclusionDate) {
-        this.conclusionDate = conclusionDate;
-    }
-
-    public Date getFinishDate() {
-        return finishDate;
-    }
-
-    public void setFinishDate(Date finishDate) {
-        this.finishDate = finishDate;
+    public void setTaskDateTime(String taskDateTime) {
+        this.taskDateTime = taskDateTime;
     }
 
     public Long getDurationTime() {

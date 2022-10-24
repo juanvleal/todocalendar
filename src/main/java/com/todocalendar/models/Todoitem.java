@@ -14,20 +14,18 @@ public class Todoitem {
     private String title;
     private String description;
     private boolean done;
-    private Date conclusionDate;
-    private Date finishDate;
+    private String taskDateTime;
     private Long durationTime;
 
     public Todoitem() {
     }
 
-    public Todoitem(Long id, String title, String description, boolean done, Date conclusionDate, Date finishDate, Long durationTime) {
+    public Todoitem(Long id, String title, String description, boolean done, String taskDateTime, Long durationTime) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.done = done;
-        this.conclusionDate = conclusionDate;
-        this.finishDate = finishDate;
+        this.taskDateTime = taskDateTime;
         this.durationTime = durationTime;
     }
 
@@ -63,27 +61,19 @@ public class Todoitem {
         this.done = done;
     }
 
-    public Date getConclusionDate() {
-        return conclusionDate;
+    public String getTaskDateTime() {
+        return taskDateTime;
     }
 
-    public void setConclusionDate(Date conclusionDate) {
-        this.conclusionDate = conclusionDate;
-    }
-
-    public Date getFinishDate() {
-        return finishDate;
-    }
-
-    public void setFinishDate(Date finishDate) {
-        this.finishDate = finishDate;
+    public void setTaskDateTime(String taskDateTime) {
+        this.taskDateTime = taskDateTime;
     }
 
     public Long getDurationTime() {
         return durationTime;
     }
 
-    public void setDurationTime(Date d1, Date d2) {
-        this.durationTime = d1.getTime() - d2.getTime();
+    public void setDurationTime(Long durationTime) {
+        this.durationTime = durationTime;
     }
 }
